@@ -49,7 +49,7 @@ services:
       retries: 10
 
   ollama:
-    image: ollama/ollama:0.35.1
+    image: ollama/ollama:0.40.3
     security_opt:
       - no-new-privileges:true
     environment:
@@ -72,7 +72,7 @@ services:
   # A API so sobe depois disso. Sem o "ollama run" de aquecimento, a primeira
   # pergunta esperava mais de 2 minutos o modelo sair do disco.
   ollama-modelos:
-    image: ollama/ollama:0.35.1
+    image: ollama/ollama:0.40.3
     security_opt:
       - no-new-privileges:true
     environment:
