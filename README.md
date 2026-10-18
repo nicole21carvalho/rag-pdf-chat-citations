@@ -21,6 +21,21 @@
   <img src="docs/img/conversa.png" alt="Pergunta sobre o salário respondida com a citação da página 1 do edital aberta" width="900">
 </p>
 
+## 🌎 In English
+
+**Ask your documents.** Upload PDFs and ask questions in Portuguese: the AI answers **citing the document and the
+page** each piece of information came from.
+
+- **RAG** with LangChain, `nomic-embed-text` embeddings and pgvector (HNSW). If no passage covers the question, it
+  says so instead of making things up.
+- **Retrieval evaluated** with known-answer questions: the right page ranks first in **11 of 12**.
+- Answers **streamed in real time** (Server-Sent Events), with the models running locally on Ollama.
+- Prompt-injection defenses, Argon2 password hashing, and Kubernetes manifests with HPA and NetworkPolicy.
+- 31 back-end tests (real PostgreSQL + pgvector with Testcontainers) and 8 front-end tests.
+  *Python · FastAPI · LangChain · pgvector · Ollama · Next.js · TypeScript · Kubernetes.*
+
+*The rest of this README is in Portuguese.*
+
 ---
 
 ## 🎯 O problema
