@@ -10,7 +10,7 @@ RUN npm run build
 
 # Estagio 2: so o nginx e os arquivos prontos. Imagem de ~25 MB, sem Node.
 # A variante unprivileged roda o nginx sem root.
-FROM nginxinc/nginx-unprivileged:1.30-alpine
+FROM nginxinc/nginx-unprivileged:1.31-alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/out /usr/share/nginx/html
 EXPOSE 8080
