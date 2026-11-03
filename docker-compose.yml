@@ -160,7 +160,7 @@ services:
       - api
 
   grafana:
-    image: grafana/grafana:13.2
+    image: grafana/grafana:13.3
     profiles: [monitoramento]
     <<: *seguro
     environment:
