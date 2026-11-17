@@ -1,7 +1,7 @@
 # Build em dois estagios: o uv e o cache de download ficam no primeiro; a
 # imagem final leva so o ambiente virtual pronto e o codigo.
 
-FROM python:3.14-slim AS build
+FROM python:3.15-slim AS build
 COPY --from=ghcr.io/astral-sh/uv:0.12 /uv /bin/uv
 WORKDIR /app
 # Compila para bytecode no build, e nao na primeira requisicao.
@@ -13,7 +13,7 @@ RUN uv sync --frozen --no-dev --no-install-project
 COPY src ./src
 RUN uv sync --frozen --no-dev
 
-FROM python:3.14-slim
+FROM python:3.15-slim
 WORKDIR /app
 # Usuario sem privilegio: se alguem escapar da aplicacao, nao e root.
 RUN useradd --system --uid 1001 oraculo
